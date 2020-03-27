@@ -1,0 +1,14 @@
+Goutham Narendiran, 100556439
+Vipooshan Sivaruban, 100618301
+Sajeeva Seralathan, 100586578
+
+
+Design Document:
+
+A.)	We could have used a simple shared memory management algorithm in the form of a linked list. In this algorithm, the block has information of the previous and next memory location. We ended up with something very similar, our algorithm has four linked lists, that points to the next process in the queue. Each list has a different level of priority.
+
+B.)	The dispatcher opens and reads the file with all the information regarding the processes. It dissects the information, the sorts the processes by priority from 0 to 3. 0 being real-time processes and 1, 2, and 3 being regular priority. It then saves the sorted processes in its own list, from there, it calls each list to run its task and use the resources needed by sequence of appearance within each priority.
+
+C.)	Our program fulfilled the requirements in a very simple fashion without over complicating it. It sorted based on priority, then executed in FIFO sequence. It was a design choice to have three lists instead of one, as it would be easier to manage the priority sequence. If everything was kept in one list, the priority sequence would have been a mess to deal with. The program functions as expected with our design choices.
+
+D.)	All computers have limited hardware and storage space. It is not infinite. Therefore, the CPU must manage its resources and fulfill duties without crashing. Therefore, memory allocations and prioritization of tasks play an important role in “real” Operating Systems. However, doing it our way, where we launch a process at a time, will slow down the system significantly when the process load is high.
